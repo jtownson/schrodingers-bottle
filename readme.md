@@ -1,4 +1,4 @@
-#Schrodinger's bottle 
+# Schrodinger's bottle 
 ### A simple teambuilding exercise inspired by the two-phase commit protocol 
 
 We once had a retro that involved revealing something about your past to the rest of the team.
