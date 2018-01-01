@@ -8,6 +8,7 @@ const server = express();
 
 server.use(bodyParser.json());
 
+// Create a new game. Call this to wipe existing state.
 server.post('/new', (req, res) => {
     const storage = req.webtaskContext.storage;
     storage.get((error, data) => {
@@ -17,6 +18,9 @@ server.post('/new', (req, res) => {
     });
 });
 
+// Get an anonymous list of secrets.
+// This allows users to consider whether they think all of them are suitably revealing
+// or if some people are not really playing the game.
 server.get('/secrets', (req, res) => {
 
     const storage = req.webtaskContext.storage;
@@ -29,6 +33,7 @@ server.get('/secrets', (req, res) => {
     });
 });
 
+// Post your name and your secret story
 server.post('/secret', (req, res) => {
     const storage = req.webtaskContext.storage;
     const body = req.body;
@@ -50,6 +55,8 @@ server.post('/secret', (req, res) => {
     });
 });
 
+// Post your name and your vote (yes/no) as to whether the
+// team should 'commit' and reveal the names behind the secrets.
 server.post('/vote', (req, res) => {
     const storage = req.webtaskContext.storage;
     const vote = req.body;
@@ -70,6 +77,9 @@ server.post('/vote', (req, res) => {
     });
 });
 
+// Get the result of the transaction. If the team committed,
+// this is the stories with names against them. Otherwise,
+// nothing is revealed.
 const positives = new Set(["true", "yes"]);
 
 server.get('/spin-the-bottle', (req, res) => {
