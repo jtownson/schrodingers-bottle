@@ -1,0 +1,28 @@
+{
+  "name": "schrodingers-bottle",
+  "version": "1.0.0",
+  "description": "A simple distributed commit protocol",
+  "main": "index.js",
+  "scripts": {
+    "build": "wt create index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jtownson/schrodingers-bottle.git"
+  },
+  "author": "Jeremy Townson",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/jtownson/schrodingers-bottle/issues"
+  },
+  "homepage": "https://github.com/jtownson/schrodingers-bottle#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "webtask-tools": "^3.2.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.1"
+  }
+}
